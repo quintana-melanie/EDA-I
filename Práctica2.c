@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+    int a[5] = {2, 4, 6, 8, 10};   // Declara un arreglo de 5 enteros
+    int *p = a;                    // El puntero p apunta al primer elemento del arreglo (a[0])
+
+    printf("1) a[1] = %d\n", a[1]);           // Imprime el valor del elemento en la posición 1 del arreglo (4)
+    printf("2) *(a+3) = %d\n", *(a+3));       //  a+3 apunta a a[3], que es 8
+    printf("3) *p++ = %d\n", *p++);           // Imprime el valor apuntado por p (2), luego incrementa p para que apunte a a[1]
+    printf("4) *++p = %d\n", *++p);           // Incrementa p primero (apunta a a[2]) y luego imprime su valor (6)
+    printf("5) p[1] = %d\n", p[1]);           //  *(p+1), imprime el valor en la siguiente posición (8)
+    printf("6) *(p+=2) = %d\n", *(p+=2));     // Avanza p dos posiciones más y muestra el valor al que apunta (10)
+    printf("7) p - a = %ld\n", p - a);        // Imprime la diferencia entre p y a, cuántas posiciones avanzó desde a[0]
+
+    return 0;
+}
