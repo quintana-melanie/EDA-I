@@ -22,7 +22,7 @@ int main(void) {
     getchar();
 
     if (n <= 0 || n > MAX) {
-        printf("❌ Error: El número de películas debe estar entre 1 y %d.\n", MAX);
+        printf("Error: El número de películas debe estar entre 1 y %d.\n", MAX);
         return 1;
     }
 
@@ -96,7 +96,7 @@ for (int i = 0; i < n; i++) {
                         encontrado = 1;
                     }
                 }
-                if (!encontrado) printf("❌ No se encontró.\n");
+                if (!encontrado) printf("No se encontró.\n");
                 break;
 
             case 2: 
@@ -109,7 +109,7 @@ for (int i = 0; i < n; i++) {
                         encontrado = 1;
                     }
                 }
-                if (!encontrado) printf("❌ No se encontró.\n");
+                if (!encontrado) printf("No se encontró.\n");
                 break;
 
             case 3: 
