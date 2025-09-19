@@ -4,7 +4,8 @@
 #define MAX 10   
 #define MAX_DIR 5
 
-struct pelicula {
+struct pelicula 
+{
     char nombre[50];
     char genero[20];
     int anio;
@@ -12,7 +13,8 @@ struct pelicula {
     char directores[MAX_DIR][50];
 };
 
-int main(void) {
+int main(void) 
+{
     struct pelicula videoteca[MAX];
     struct pelicula *p = videoteca; 
     int n;
@@ -21,12 +23,14 @@ int main(void) {
     scanf("%d", &n);
     getchar();
 
-    if (n <= 0 || n > MAX) {
+    if (n <= 0 || n > MAX) 
+    {
         printf("Error: El número de películas debe estar entre 1 y %d.\n", MAX);
         return 1;
     }
 
-for (int i = 0; i < n; i++) {
+for (int i = 0; i < n; i++) 
+{
         printf("\n--- Película %d ---\n", i + 1);
 
         printf("Nombre: ");
@@ -45,12 +49,14 @@ for (int i = 0; i < n; i++) {
         scanf("%d", &(p+i)->numDirectores);
         getchar();
 
-        if ((p+i)->numDirectores <= 0) {
+        if ((p+i)->numDirectores <= 0) 
+        {
             printf("Error: número inválido de directores.\n");
             return 1;
         }
 
-        for (int j = 0; j < (p+i)->numDirectores; j++) {
+        for (int j = 0; j < (p+i)->numDirectores; j++) 
+        {
             printf("Director %d: ", j + 1);
             fgets((p+i)->directores[j], sizeof((p+i)->directores[j]), stdin);
             (p+i)->directores[j][strcspn((p+i)->directores[j], "\n")] = 0;
@@ -58,12 +64,14 @@ for (int i = 0; i < n; i++) {
     }
 
     printf("\n##### Videoteca en orden inverso #####\n");
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; i >= 0; i--) 
+    {
         printf("\nPelicula: %s\n", (p+i)->nombre);
         printf("Genero: %s\n", (p+i)->genero);
         printf("Año: %d\n", (p+i)->anio);
         printf("Directores (%d):\n", (p+i)->numDirectores);
-        for (int j = 0; j < (p+i)->numDirectores; j++) {
+        for (int j = 0; j < (p+i)->numDirectores; j++) 
+        {
             printf("  - %s\n", (p+i)->directores[j]);
         }
     }
@@ -85,13 +93,16 @@ for (int i = 0; i < n; i++) {
         getchar();
 
         encontrado = 0;
-        switch (opcion) {
+        switch (opcion) 
+        {
             case 1: 
                 printf("Ingresa nombre de la película: ");
                 fgets(cadena, sizeof(cadena), stdin);
                 cadena[strcspn(cadena, "\n")] = 0;
-                for (int i = 0; i < n; i++) {
-                    if (strcmp((p+i)->nombre, cadena) == 0) {
+                for (int i = 0; i < n; i++) 
+                {
+                    if (strcmp((p+i)->nombre, cadena) == 0) 
+                    {
                         printf("Encontrada: %s (%d)\n", (p+i)->nombre, (p+i)->anio);
                         encontrado = 1;
                     }
@@ -103,8 +114,10 @@ for (int i = 0; i < n; i++) {
                 printf("Ingresa año: ");
                 scanf("%d", &anioBuscar);
                 getchar();
-                for (int i = 0; i < n; i++) {
-                    if ((p+i)->anio == anioBuscar) {
+                for (int i = 0; i < n; i++) 
+                {
+                    if ((p+i)->anio == anioBuscar) 
+                    {
                         printf("Encontrada: %s (%d)\n", (p+i)->nombre, (p+i)->anio);
                         encontrado = 1;
                     }
@@ -116,9 +129,12 @@ for (int i = 0; i < n; i++) {
                 printf("Ingresa nombre del director: ");
                 fgets(cadena, sizeof(cadena), stdin);
                 cadena[strcspn(cadena, "\n")] = 0;
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < (p+i)->numDirectores; j++) {
-                        if (strcmp((p+i)->directores[j], cadena) == 0) {
+                for (int i = 0; i < n; i++) 
+                {
+                    for (int j = 0; j < (p+i)->numDirectores; j++) 
+                    {
+                        if (strcmp((p+i)->directores[j], cadena) == 0) 
+                        {
                             printf("Encontrada: %s (%d)\n", (p+i)->nombre, (p+i)->anio);
                             encontrado = 1;
                         }
@@ -132,7 +148,8 @@ for (int i = 0; i < n; i++) {
                 fgets(cadena, sizeof(cadena), stdin);
                 cadena[strcspn(cadena, "\n")] = 0;
 
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < n; i++) 
+                {
                     char anioStr[10];
                     sprintf(anioStr, "%d", (p+i)->anio);
 
@@ -142,8 +159,10 @@ for (int i = 0; i < n; i++) {
                         printf("Coincidencia: %s (%d)\n", (p+i)->nombre, (p+i)->anio);
                         encontrado = 1;
                     }
-                    for (int j = 0; j < (p+i)->numDirectores; j++) {
-                        if (strstr((p+i)->directores[j], cadena)) {
+                    for (int j = 0; j < (p+i)->numDirectores; j++) 
+                    {
+                        if (strstr((p+i)->directores[j], cadena)) 
+                        {
                             printf("Coincidencia: %s (%d)\n", (p+i)->nombre, (p+i)->anio);
                             encontrado = 1;
                         }
@@ -169,7 +188,8 @@ for (int i = 0; i < n; i++) {
 
     int contador = 0;
     for (int i = 0; i < n; i++) {
-        if (strcmp((p+i)->genero, generoBuscar) == 0) {
+        if (strcmp((p+i)->genero, generoBuscar) == 0) 
+        {
             contador++;
         }
     }
