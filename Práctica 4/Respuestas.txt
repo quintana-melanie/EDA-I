@@ -1,0 +1,15 @@
+1. ¿Qué diferencia observaron entre los valores iniciales con malloc y calloc?
+
+malloc reserva memoria sin inicializarla, por lo que los valores iniciales son basura.
+
+calloc reserva memoria inicializada en 0, por lo que los valores iniciales son ceros.
+
+2. ¿Qué sucede si en realloc piden un tamaño más grande que el original? ¿Y más pequeño?
+
+Si se pide un tamaño más grande, se reserva más espacio y los nuevos elementos quedan sin inicializar.
+
+Si se pide un tamaño más pequeño, se pierden los datos que estaban fuera del nuevo rango.
+
+3. ¿Qué pasa si olvidan llamar a free?
+
+Se produce una fuga de memoria (memory leak), lo que significa que la memoria reservada nunca se libera y el programa consume más recursos del sistema innecesariamente.
