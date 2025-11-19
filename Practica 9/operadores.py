@@ -1,4 +1,3 @@
-# Operadores aritméticos y lógicos
 
 a = 10
 b = 3
@@ -12,4 +11,5 @@ print("Potencia:", a ** b)
 print("Comparación a > b:", a > b)
 print("Comparación a == b:", a == b)
 print("Comparación a != b:", a != b)
+
 
