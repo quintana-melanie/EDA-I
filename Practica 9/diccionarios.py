@@ -1,4 +1,3 @@
-# Diccionarios en Python
 
 persona = {
     "nombre": "Melanie",
@@ -14,3 +13,4 @@ print("Edad actualizada:", persona["edad"])
 
 persona["ciudad"] = "CDMX"
 print("Nuevo diccionario:", persona)
+
