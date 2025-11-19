@@ -1,4 +1,3 @@
-# Práctica 09: Variables en Python
 
 nombre = "Melanie"
 edad = 20
@@ -9,3 +8,4 @@ print("Nombre:", nombre)
 print("Edad:", edad)
 print("Altura:", altura)
 print("¿Activa?:", activo)
+
