@@ -1,4 +1,3 @@
-# Uso de listas en Python
 
 numeros = [5, 10, 15, 20]
 
@@ -12,4 +11,5 @@ numeros.remove(10)
 print("Después de eliminar 10:", numeros)
 
 print("Longitud:", len(numeros))
+
 
