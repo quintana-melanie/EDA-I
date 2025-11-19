@@ -1,4 +1,3 @@
-# Trabajando con cadenas
 
 texto = "Hola Python"
 
@@ -9,3 +8,4 @@ print("Longitud:", len(texto))
 print("Mayúsculas:", texto.upper())
 print("Minúsculas:", texto.lower())
 print("Reemplazar:", texto.replace("Python", "Melanie"))
+
