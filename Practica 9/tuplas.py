@@ -1,4 +1,3 @@
-# Uso de tuplas
 
 colores = ("rojo", "verde", "azul")
 
@@ -7,3 +6,4 @@ print("Primer color:", colores[0])
 print("Tamaño:", len(colores))
 
 # Las tuplas NO se pueden modificar
+
